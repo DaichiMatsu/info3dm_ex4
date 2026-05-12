@@ -40,3 +40,5 @@ plt.show()
 
 # TSV形式で保存
 DF.to_csv("ex1.4.tsv", sep="\t", index=False)
+
+DF = pd.read_csv("ex1.4.tsv", sep="\t")
