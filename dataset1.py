@@ -70,3 +70,9 @@ def ex1_4(DF, filename="ex1.4.tsv"):
 def ex1_5(filename="ex1.4.tsv"):
     DF = pd.read_csv("ex1.4.tsv", sep="\t")
     return DF
+
+# 演習1.8(戦型回帰モデルの準備)
+from sklearn.linear_model import LinearRegression
+def ex1_8():
+    model = LinearRegression()
+    return model
