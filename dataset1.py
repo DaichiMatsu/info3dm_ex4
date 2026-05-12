@@ -20,16 +20,21 @@ def true_function(x):
 
 y_true = true_function(x_obs)
 
+# ノイズ作成
+noise = np.random.normal(0.0, np.sqrt(2.0), 20) / 2
+
 # DataFrame型
 DF = pd.DataFrame({"観測点": x_obs, "真値": y_true})
+DF["観測値"] = DF["真値"] + noise
 
 # サンプル集合をプロット
 x = np.linspace(-1, 1, 100)
 y = true_function(x)
 plt.plot(x, y, label="y = 10sin(0.8πx)")
 plt.scatter(DF["観測点"], DF["真値"], label="サンプル集合", s=50)
+plt.scatter(DF["観測点"], DF["観測値"], label="観測値",s=50)
 plt.xlim(-1, 1)
 plt.legend()
-plt.savefig("ex1.2.png")
+plt.savefig("ex1.3.png")
 plt.show()
 
